@@ -123,20 +123,24 @@ def simulate_day(model, lat, lon):
 
 # --- Main Execution ---
 if __name__ == "__main__":
-    latitude = 28.7041 
-    longitude = 77.1025
+    try:
+        latitude = float(input("Enter latitude: "))
+        longitude = float(input("Enter longitude: "))
 
-    print("Training model...")
-    model = train_model()
+        print("Training model...")
+        model = train_model()
 
-    print("Simulating day...")
-    hours, tilts = simulate_day(model, latitude, longitude)
+        print("Simulating day...")
+        hours, tilts = simulate_day(model, latitude, longitude)
 
-    # Plot
-    plt.figure(figsize=(10,6))
-    plt.plot(hours, tilts, marker='o')
-    plt.title('Simulated Optimal Tilt Angle Across the Day (Delhi)')
-    plt.xlabel('Hour (UTC)')
-    plt.ylabel('Tilt Angle (Degrees)')
-    plt.grid(True)
-    plt.show()
+        # Plot
+        plt.figure(figsize=(10, 6))
+        plt.plot(hours, tilts, marker='o')
+        plt.title(f'Simulated Optimal Tilt Angle Across the Day\n(Lat: {latitude}, Lon: {longitude})')
+        plt.xlabel('Hour (UTC)')
+        plt.ylabel('Tilt Angle (Degrees)')
+        plt.grid(True)
+        plt.show()
+
+    except ValueError:
+        print("Invalid input. Please enter numeric values for latitude and longitude.")
