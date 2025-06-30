@@ -75,9 +75,3 @@ You can change the location by modifying the `latitude` and `longitude` values i
 - [ ] Build a simple web frontend using Streamlit or Flask
 
 ---
-
-## 👤 Author
-
-**Shreyash Puri**  
-📧 [tastypiranha@gmail.com](mailto:tastypiranha@gmail.com)  
-🌐 [github.com/tastypiranha](https://github.com/tastypiranha)
